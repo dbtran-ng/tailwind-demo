@@ -84,6 +84,16 @@ export default function Demo() {
           <div className="divide-y divide-coolGray-700">
             <ul className="pt-2 pb-4 space-y-1 text-sm">
               {list.map((danhMuc, index) => {
+                const classNameActive = [
+                  'flex',
+                  'items-center',
+                  'p-2',
+                  'space-x-3',
+                  'rounded-md',
+                  maDanhMuc === danhMuc.maDanhMuc
+                    ? 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white'
+                    : '',
+                ];
                 return (
                   <li
                     key={index}
@@ -94,7 +104,7 @@ export default function Demo() {
                     <a
                       rel="noopener noreferrer"
                       href="#"
-                      className="flex items-center p-2 space-x-3 rounded-md"
+                      className={classNameActive.join(' ')}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
